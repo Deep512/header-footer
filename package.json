@@ -23,7 +23,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Deep_512/header-footer.git"
+    "url": "git+https://github.com/Deep512/header-footer.git"
 },
   "scripts": {
     "start": "react-scripts start",
