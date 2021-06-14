@@ -1,7 +1,8 @@
-import sass from "rollup-plugin-sass";
+// import sass from "rollup-plugin-sass";
 import resolve from "rollup-plugin-node-resolve";
 import babel from "rollup-plugin-babel";
 import commonjs from "rollup-plugin-commonjs";
+import postcss from "rollup-plugin-postcss";
 
 import pkg from "./package.json";
 
@@ -12,7 +13,9 @@ export default {
 		format: "cjs",
 	},
 	plugins: [
-		sass({ insert: true }),
+		postcss({
+			extensions: [".css"],
+		}),
 		babel({
 			exclude: "node_modules/**",
 		}),

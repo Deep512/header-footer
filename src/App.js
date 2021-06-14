@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-import "./App.scss";
+import "./App.css";
 
 const Header = ({ links }) => {
 	return (

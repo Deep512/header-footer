@@ -1,0 +1,18 @@
+.header__class {
+  display: flex;
+  margin-bottom: 10px;
+  gap: 12px;
+  height: 50px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid;
+  object-fit: contain;
+  margin-top: 10px; }
+
+.footer__class {
+  position: fixed;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  background-color: #480a99;
+  color: white;
+  text-align: center; }

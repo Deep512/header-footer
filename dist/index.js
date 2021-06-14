@@ -1,23 +1,5 @@
 'use strict';
 
-
-
-function ___$insertStyle(css) {
-  if (!css) {
-    return;
-  }
-  if (typeof window === 'undefined') {
-    return;
-  }
-
-  var style = document.createElement('style');
-
-  style.setAttribute('type', 'text/css');
-  style.innerHTML = css;
-  document.head.appendChild(style);
-  return css;
-}
-
 Object.defineProperty(exports, '__esModule', { value: true });
 
 var React = require('react');
@@ -26,9 +8,35 @@ function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'defau
 
 var React__default = /*#__PURE__*/_interopDefaultLegacy(React);
 
-___$insertStyle(".header__class {\n  display: flex;\n  margin-bottom: 10px;\n  gap: 12px;\n  height: 50px;\n  margin-bottom: 20px;\n  border-bottom: 1px solid;\n  object-fit: contain;\n  margin-top: 10px;\n}\n\n.footer__class {\n  position: fixed;\n  width: 100%;\n  left: 0;\n  bottom: 0;\n  background-color: #480a99;\n  color: white;\n  text-align: center;\n}");
+function styleInject(css, ref) {
+  if ( ref === void 0 ) ref = {};
+  var insertAt = ref.insertAt;
 
-// import Footer from "./lib/components/Footer";
+  if (!css || typeof document === 'undefined') { return; }
+
+  var head = document.head || document.getElementsByTagName('head')[0];
+  var style = document.createElement('style');
+  style.type = 'text/css';
+
+  if (insertAt === 'top') {
+    if (head.firstChild) {
+      head.insertBefore(style, head.firstChild);
+    } else {
+      head.appendChild(style);
+    }
+  } else {
+    head.appendChild(style);
+  }
+
+  if (style.styleSheet) {
+    style.styleSheet.cssText = css;
+  } else {
+    style.appendChild(document.createTextNode(css));
+  }
+}
+
+var css_248z = ".header__class {\n  display: flex;\n  margin-bottom: 10px;\n  gap:12px;\n  height:50px;\n  margin-bottom:20px;\n  border-bottom: 1px solid;\n  object-fit:contain;\n  margin-top:10px;\n}\n\n.footer__class {\nposition: fixed;\nwidth: 100%;\nleft: 0;\nbottom: 0;\nbackground-color: rgb(72, 10, 153);\ncolor: white;\ntext-align: center;\n}\n";
+styleInject(css_248z);
 
 const Header = (_ref) => {
   let {
