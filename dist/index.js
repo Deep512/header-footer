@@ -21,7 +21,6 @@ function ___$insertStyle(css) {
 Object.defineProperty(exports, '__esModule', { value: true });
 
 var React = require('react');
-var reactRouterDom = require('react-router-dom');
 
 function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
 
@@ -37,22 +36,7 @@ const Header = (_ref) => {
   } = _ref;
   return /*#__PURE__*/React__default['default'].createElement("header", {
     className: "header__class"
-  }, links.map((_ref2, idx) => {
-    let {
-      name,
-      link
-    } = _ref2;
-    return /*#__PURE__*/React__default['default'].createElement(reactRouterDom.NavLink, {
-      key: idx,
-      to: link,
-      activeStyle: {
-        fontWeight: "bold"
-      },
-      style: {
-        marginTop: "10px"
-      }
-    }, name);
-  }));
+  }, links.map(link => link.component));
 };
 
 const Footer = props => {
